@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/header.jsx';
+import Question from './components/questions/question';
+import Answer from './components/answer/answer';
+import Description from './components/description/description';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Question/>
+      <section className='award'>
+        <Answer/>
+        <Description/>
+        <button className='btn award-btn'>Next level</button>
+      </section>
     </div>
   );
 }
