@@ -1,0 +1,35 @@
+.header{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.header-content{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+.game-score{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.game-score_item{
+    margin-left: 10px;
+}
+.list-questions{
+    display: flex;
+    margin: 0 auto;
+
+}
+.list-items{
+    text-align: center;
+    margin: 0 auto;
+}
+.list-item{
+    padding: 10px 20px;
+}
