@@ -11,11 +11,15 @@ function App() {
     <div className="App">
       <Header/>
       <Question/>
-      <section className='award'>
-        <Answer/>
-        <Description/>
-        <button className='btn award-btn'>Next level</button>
-      </section>
+      <section className='container section'>
+        <div className='row'>
+          <Answer/>
+          <Description/>
+        </div>         
+      </section>      
+      <section className='section container'>          
+          <button type="button" className="btn btn-primary btn-lg btn-block disabled">Next level</button>
+        </section>       
     </div>
   );
 }

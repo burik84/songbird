@@ -1,0 +1,30 @@
+.answer-item{
+    cursor: pointer;
+}
+.answer-item:hover,
+.answer-item:focus{
+    color:#fff;
+    background-color:var(--primary);
+    border-color:var(--primary);
+    box-shadow:0 0 0 0.2rem rgba(140,203,185,0.5);
+    z-index: 1;
+}
+
+.answer-item--true,
+.answer-item--true.disabled
+{
+    color:#fff;
+    background-color:var(--success);   
+}
+.answer-item--false,
+.answer-item--false.disabled
+{    
+    color:#fff;
+    background-color:var(--secondary);  
+}
+
+@media (max-width: 572px) { 
+    .answer{
+        margin-bottom: 10px;
+    }
+ }

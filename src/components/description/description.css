@@ -1,0 +1,22 @@
+.description-title__name-latin{
+    padding-top: 0;
+}
+.description{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description__bird{
+    height: calc( 24px * 3 );
+    overflow: hidden;
+}
+.description__bird p{    
+    height: calc( 24px * 4 );
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media (max-width: 572px) { 
+    .description{
+
+    }
+ }

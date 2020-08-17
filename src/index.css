@@ -12,4 +12,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.section{
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.image{
+  display: inline-block;
+  border-radius: 5px;
+}
 
+.bird-name{
+  padding: 5px 5px 10px;
+  border-bottom: 1px solid var(--gray);
+}
+.btn.disabled{
+  cursor: auto;
+}

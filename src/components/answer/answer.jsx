@@ -7,14 +7,14 @@ class Answer extends React.Component{
   }
   render(){
     return(
-      <div className='answer'>
-        <ul className='answer-list'>
-          <li className='answer-item'><span className='answer-round'></span>Eagle</li>
-          <li className='answer-item'><span className='answer-round'></span>Kite</li>
-          <li className='answer-item'><span className='answer-round'></span>Harrier</li>
-          <li className='answer-item'><span className='answer-round'></span>Falcon</li>
-          <li className='answer-item'><span className='answer-round'></span>Hawk</li>
-          <li className='answer-item'><span className='answer-round'></span>Owl</li>
+      <div className='answer col-md-5 col-sm-4 col-12'>
+        <ul className='answer-items list-group'>
+          <li className='answer-item list-group-item d-flex justify-content-between align-items-center '>Eagle </li>
+          <li className='answer-item answer-item--true disabled list-group-item d-flex justify-content-between align-items-center'>Kite</li>
+          <li className='answer-item list-group-item d-flex justify-content-between align-items-center'>Harrier</li>
+          <li className='answer-item answer-item--false disabled list-group-item d-flex justify-content-between align-items-center'>Falcon</li>
+          <li className='answer-item answer-item--false disabled list-group-item d-flex justify-content-between align-items-center'>Hawk</li>
+          <li className='answer-item list-group-item d-flex justify-content-between align-items-center'>Owl</li>
         </ul>
       </div>
     )
