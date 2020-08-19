@@ -1,8 +1,27 @@
-import React from 'react';
-import { Fragment } from 'react';
+import React, {Component} from 'react';
 import './header.css'
 
-const Header = () => {
+export default class Header extends Component {
+  navItems=[
+    {name:'Warm up', id:0},
+    {name:'Passerines', id:1},
+    {name:'Forest birds', id:2},
+    {name:'Song birds', id:3},
+    {name:'Predator birds', id:4},
+    {name:'Sea birds', id:5},
+  ]
+
+  render(){
+    const {navActive}=this.props;
+    const listItem=this.navItems.map(({name, id})=>{
+      const isActive=navActive===id;
+      const classActiveNav=isActive?'activ':null;
+      return(
+        <li className={`nav-item list-item col-md-2 col-sm-4 ${classActiveNav}`} key={id}>
+          {name}
+        </li>
+      )
+    })
     return (
       <section className="container section">
         <div className="header d-flex">
@@ -17,29 +36,11 @@ const Header = () => {
           </div>
           <div className='list-questions'>
               <ul className="nav nav-pils list-items">
-                <li className="nav-item list-item col-md-2 col-sm-4">
-                    Warm up
-                </li>
-                <li className="nav-item list-item  col-md-2 col-sm-4 col-6">
-                    Passerines
-                </li>
-                <li className="nav-item list-item col-md-2 col-sm-4 col-6 activ">
-                    Forest birds
-                </li>
-                <li className="nav-item list-item col-md-2 col-sm-4 col-6">
-                    Song birds
-                </li>
-                <li className="nav-item list-item col-md-2 col-sm-4 col-6">
-                    Predator birds
-                </li>
-                <li className="nav-item list-item col-md-2 col-sm-4">
-                    Sea birds
-                </li>
+                {listItem}
               </ul>
           </div>
         </div>
       </section>
-    );
+      );
+    }   
   };
-  
-  export default Header;
