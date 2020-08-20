@@ -1,10 +1,8 @@
 import React from 'react';
-import './description.css'
+import './description.css';
 
 class Description extends React.Component{
-  constructor(){
-    super()
-  }
+ 
   render(){
     return(
       <div className='description col-md-7 col-sm-8 col-12'>

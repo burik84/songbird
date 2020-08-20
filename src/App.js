@@ -5,19 +5,18 @@ import Question from './components/questions/question';
 import Answer from './components/answer/answer';
 import Description from './components/description/description';
 
-
 export default class App extends Component{
+
   state={
     navActive:0,
     totalScore:0,
     levelScore:6,
   }
-  idX=0;
+
   onChangeLevel=()=>{
-    this.idX=this.idX+1;
     this.setState(()=>{
      return  {
-      navActive:this.idX,
+      navActive:this.state.navActive+1,
       totalScore:this.state.totalScore+this.state.levelScore,
       }
     })
