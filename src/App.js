@@ -9,21 +9,26 @@ import Description from './components/description/description';
 export default class App extends Component{
   state={
     navActive:0,
+    totalScore:0,
+    levelScore:6,
   }
   idX=0;
   onChangeLevel=()=>{
-    this.idX=this.idX+1
+    this.idX=this.idX+1;
     this.setState(()=>{
-    console.log(this.idX);
      return  {
       navActive:this.idX,
+      totalScore:this.state.totalScore+this.state.levelScore,
       }
     })
   }
   render(){
     return (
       <div className="App">
-        <Header navActive={this.state.navActive}/>
+        <Header 
+          navActive={this.state.navActive} 
+          totalScore={this.state.totalScore} 
+          levelScore={this.state.levelScore}/>
         <Question/>
         <section className='container section'>
           <div className='row'>

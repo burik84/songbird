@@ -12,7 +12,7 @@ export default class Header extends Component {
   ]
 
   render(){
-    const {navActive}=this.props;
+    const {navActive, totalScore, levelScore}=this.props;
     const listItem=this.navItems.map(({name, id})=>{
       const isActive=navActive===id;
       const classActiveNav=isActive?'activ':null;
@@ -30,8 +30,8 @@ export default class Header extends Component {
                 Song<span className='header-title--color'>bird</span>
             </h1>
             <div className='game-score'>
-                <span className='game-score_assign'>+ 0</span>
-                <span className='game-score_item'>Score: 00</span>
+                <span className='game-score_assign'>+ {levelScore}</span>
+                <span className='game-score_item'>Score: {totalScore}</span>
             </div>
           </div>
           <div className='list-questions'>
