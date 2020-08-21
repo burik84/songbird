@@ -1,3 +1,9 @@
+// navActive текущий индекс вопроса
+// totalScore общее количество баллов
+// levelScore количество балла за вопрос измениющееся в процесса ответов
+// numberAnswerTrue заглушка - номер правильного ответа
+// answerTrue есть ли правильный ответ, при инициализации в состояние false
+
 import React, {Component } from 'react';
 import './App.css';
 import Header from './components/header/header.jsx';
@@ -7,12 +13,16 @@ import Description from './components/description/description';
 
 export default class App extends Component{
 
+
   state={
-    navActive:0,
+    navActive:0, 
     totalScore:0,
     levelScore:6,
+    numberAnswerTrue:2,
+    answerTrue:false,
   }
 
+  // Переход на следующую группу вопросов в headerе
   onChangeLevel=()=>{
     this.setState(()=>{
      return  {
@@ -21,8 +31,16 @@ export default class App extends Component{
       }
     })
   }
-  render(){
-    return (
+
+  // Получение номера ответа от компонента Answer
+  getAnswerNumber=(num)=>{
+    this.setState({
+      answerNumber:num,
+    })
+  }
+
+  render(){ 
+    return (      
       <div className="App">
         <Header 
           navActive={this.state.navActive} 
@@ -31,7 +49,7 @@ export default class App extends Component{
         <Question/>
         <section className='container section'>
           <div className='row'>
-            <Answer/>
+            <Answer getAnswerNumber={this.getAnswerNumber}/>
             <Description/>
           </div>         
         </section>      
