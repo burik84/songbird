@@ -11,6 +11,8 @@ import Question from './components/questions/question';
 import Answer from './components/answer/answer';
 import Description from './components/description/description';
 
+import birdsData from './services/birdsData';
+
 export default class App extends Component{
 
 
@@ -19,9 +21,21 @@ export default class App extends Component{
     totalScore:0,
     levelScore:6,
     numberAnswerTrue:2,
-    answerTrue:false,
+    birdData:[
+      ...birdsData[0].map(({name,id })=>{
+        return this.createBirdItem(name,id)
+      })
+    ]
   }
 
+createBirdItem(name,id){
+    return {
+      name:name,
+      answerTrue:false,
+      answerFalse:false,
+      id:id,
+    }
+  }
   // Переход на следующую группу вопросов в headerе
   onChangeLevel=()=>{
     this.setState(()=>{
@@ -32,14 +46,34 @@ export default class App extends Component{
     })
   }
 
-  // Получение номера ответа от компонента Answer
-  getAnswerNumber=(num)=>{
-    this.setState({
-      answerNumber:num,
+  // Получение номера ответа от компонента Answer -  answer item
+   onToggleAnswer=(id)=>{
+     console.log('Item click', id);
+     this.setState(({ birdData })=>{
+      const idx=birdData.findIndex((el)=>el.id===id);
+
+      // 1. update object      
+      const oldItem=birdData[idx];
+      const newItem={...oldItem, 
+        answerTrue:id===this.state.numberAnswerTrue?true:false,
+        answerFalse:id===this.state.numberAnswerTrue?false:true,
+      };
+
+      // 2. construct new array
+      const newArray=[
+        ...birdData.slice(0,idx),
+        newItem,
+        ...birdData.slice(idx+1)
+      ];
+
+      return {
+        birdData:newArray,
+      }
     })
   }
 
   render(){ 
+    const { birdData}=this.state;
     return (      
       <div className="App">
         <Header 
@@ -49,7 +83,7 @@ export default class App extends Component{
         <Question/>
         <section className='container section'>
           <div className='row'>
-            <Answer getAnswerNumber={this.getAnswerNumber}/>
+            <Answer birdData={birdData} onToggleAnswer={this.onToggleAnswer} />
             <Description/>
           </div>         
         </section>      
