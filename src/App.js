@@ -10,22 +10,25 @@ import Header from './components/header/header.jsx';
 import Question from './components/questions/question';
 import Answer from './components/answer/answer';
 import Description from './components/description/description';
+import Modal  from './components/modal/modal';
 
 import birdsData from './services/birdsData';
 
 export default class App extends Component{
 
-
   state={
-    navActive:0, 
+    navActive:0,
     totalScore:0,
     levelScore:6,
-    numberAnswerTrue:2,
+    numberAnswerTrue:5,
+    trueAnswerTrue:false,
     birdData:[
       ...birdsData[0].map(({name,id })=>{
         return this.createBirdItem(name,id)
       })
-    ]
+    ],
+    getGameStatus:false,
+    getGameFinal:false,
   }
 
 createBirdItem(name,id){
@@ -37,18 +40,44 @@ createBirdItem(name,id){
     }
   }
   // Переход на следующую группу вопросов в headerе
-  onChangeLevel=()=>{
+  onChangeLevel=()=>{ 
+    const{ navActive, totalScore, levelScore, getGameStatus, getGameFinal }=this.state;
+    let getStatus=getGameStatus;
+    let getFinal=getGameFinal;
+    let newBirdData=[];
+    if(navActive===4){
+      getStatus=true;
+    }
+    if(navActive<5){
+      newBirdData=[
+        ...birdsData[navActive+1].map(({name,id })=>{
+          return this.createBirdItem(name,id)
+        })
+      ]
+    }
+    if(navActive===5){
+      getFinal=true;
+    }
     this.setState(()=>{
      return  {
-      navActive:this.state.navActive+1,
-      totalScore:this.state.totalScore+this.state.levelScore,
+        navActive:navActive+1,
+        totalScore:totalScore+levelScore+1,
+        levelScore:6,
+        trueAnswerTrue:false,
+        birdData:newBirdData,
+        getGameStatus:getStatus,
+        getGameFinal:getFinal,
       }
     })
   }
 
   // Получение номера ответа от компонента Answer -  answer item
    onToggleAnswer=(id)=>{
-     console.log('Item click', id);
+    //  console.log('Item click', id);
+    let trueAnswer=false;
+    if(id===this.state.numberAnswerTrue){
+      trueAnswer=true;
+    }
      this.setState(({ birdData })=>{
       const idx=birdData.findIndex((el)=>el.id===id);
 
@@ -67,13 +96,45 @@ createBirdItem(name,id){
       ];
 
       return {
+        levelScore:this.state.levelScore-1,
         birdData:newArray,
+        trueAnswerTrue:trueAnswer,
       }
     })
   }
 
+  closeModal=()=>{
+    this.setState(()=>{
+      return{
+        getGameFinal:false,
+      }
+    })
+  }
+
+  startAgain=()=>{
+    this.setState(()=>{
+      return{
+        navActive:0,
+        totalScore:0,
+        levelScore:6,
+        trueAnswerTrue:false,
+        getGameStatus:false,
+        getGameFinal:false,
+        birdData:[
+          ...birdsData[0].map(({name,id })=>{
+            return this.createBirdItem(name,id)
+          })
+        ],
+      }
+    })
+  }
   render(){ 
-    const { birdData}=this.state;
+    const { birdData, trueAnswerTrue, getGameStatus, getGameFinal, totalScore}=this.state;
+    const labelButton=getGameStatus?'Completion':'Next level';
+    let classNameButtons='btn btn-primary btn-lg btn-block disabled';
+    if(trueAnswerTrue){
+      classNameButtons='btn btn-primary btn-lg btn-block'
+    }
     return (      
       <div className="App">
         <Header 
@@ -83,12 +144,15 @@ createBirdItem(name,id){
         <Question/>
         <section className='container section'>
           <div className='row'>
-            <Answer birdData={birdData} onToggleAnswer={this.onToggleAnswer} />
+            <Answer birdData={birdData} onToggleAnswer={this.onToggleAnswer} trueAnswer={trueAnswerTrue}/>
             <Description/>
           </div>         
         </section>      
         <section className='section container'>          
-            <button type="button" className="btn btn-primary btn-lg btn-block disabled" onClick={this.onChangeLevel}>Next level</button>
+    <button type="button" className={classNameButtons} onClick={this.onChangeLevel}>{labelButton}</button>
+          </section>                
+        <section className='section container'>          
+            <Modal getGameFinal={getGameFinal} totalScore={totalScore} closeModal={this.closeModal} startAgain={this.startAgain} />       
           </section>       
       </div>
     );

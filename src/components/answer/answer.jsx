@@ -4,7 +4,7 @@ import './answer.css';
 class Answer extends React.Component{
 
   render(){
-    const {birdData, onToggleAnswer}=this.props;
+    const {birdData, onToggleAnswer, trueAnswer}=this.props;
 
     const elements=birdData.map((item)=>{
       const {id, answerFalse, answerTrue, name}=item
@@ -14,6 +14,9 @@ class Answer extends React.Component{
       }
       if(answerFalse){
           classNames+=' answer-item--false disabled'
+      }
+      if(trueAnswer){
+        classNames+=' disabled'
       }
       return(
         <li key={id} className={classNames} onClick={()=>onToggleAnswer(id)}>

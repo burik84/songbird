@@ -14,7 +14,6 @@ body {
 }
 .section{
   margin-bottom: 10px;
-  flex-wrap: wrap;
 }
 .image{
   display: inline-block;
@@ -27,4 +26,9 @@ body {
 }
 .btn.disabled{
   cursor: auto;
+  pointer-events: none;
+}
+.app{
+  display: flex;
+  flex-direction: column;
 }
