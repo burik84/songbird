@@ -17,7 +17,7 @@ body {
 }
 .image{
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 5px; 
 }
 
 .bird-name{

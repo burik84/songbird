@@ -1,8 +1,12 @@
 // navActive текущий индекс вопроса
 // totalScore общее количество баллов
 // levelScore количество балла за вопрос измениющееся в процесса ответов
-// numberAnswerTrue заглушка - номер правильного ответа
-// answerTrue есть ли правильный ответ, при инициализации в состояние false
+// numberAnswerTrue - номер правильного ответа временно заглушка
+// trueAnswerTrue есть ли правильный ответ, при инициализации в состояние false
+// getGameStatus - выбран последний вопрос
+// getGameFinal - получен последний ответ
+// itemAnswer - выбранный ответ, при инициализации null
+// birdData - массив данных для игры
 
 import React, {Component } from 'react';
 import './App.css';
@@ -23,20 +27,25 @@ export default class App extends Component{
     numberAnswerTrue:5,
     trueAnswerTrue:false,
     birdData:[
-      ...birdsData[0].map(({name,id })=>{
-        return this.createBirdItem(name,id)
+      ...birdsData[0].map(({name,id, species, description, image, audio })=>{
+        return this.createBirdItem(name,id, species, description, image, audio)
       })
     ],
     getGameStatus:false,
     getGameFinal:false,
+    itemAnswer:null,
   }
 
-createBirdItem(name,id){
+createBirdItem(name, id, species, description, image, audio){
     return {
-      name:name,
+      id,
+      name,
+      species,
+      description,
+      image,
+      audio,
       answerTrue:false,
       answerFalse:false,
-      id:id,
     }
   }
   // Переход на следующую группу вопросов в headerе
@@ -50,8 +59,8 @@ createBirdItem(name,id){
     }
     if(navActive<5){
       newBirdData=[
-        ...birdsData[navActive+1].map(({name,id })=>{
-          return this.createBirdItem(name,id)
+        ...birdsData[navActive+1].map(({name, id, species, description, image, audio })=>{
+          return this.createBirdItem(name, id, species, description, image, audio)
         })
       ]
     }
@@ -67,6 +76,7 @@ createBirdItem(name,id){
         birdData:newBirdData,
         getGameStatus:getStatus,
         getGameFinal:getFinal,
+        itemAnswer:null,
       }
     })
   }
@@ -99,6 +109,7 @@ createBirdItem(name,id){
         levelScore:this.state.levelScore-1,
         birdData:newArray,
         trueAnswerTrue:trueAnswer,
+        itemAnswer:id,
       }
     })
   }
@@ -120,6 +131,7 @@ createBirdItem(name,id){
         trueAnswerTrue:false,
         getGameStatus:false,
         getGameFinal:false,
+        itemAnswer:null,
         birdData:[
           ...birdsData[0].map(({name,id })=>{
             return this.createBirdItem(name,id)
@@ -128,12 +140,30 @@ createBirdItem(name,id){
       }
     })
   }
+
+  getQuestion=(id)=>{
+    const {name, image, species, description}=this.state.birdData[id-1]
+    return {
+      name,
+      image,
+      species,
+      description,
+    }
+  }
+
   render(){ 
-    const { birdData, trueAnswerTrue, getGameStatus, getGameFinal, totalScore}=this.state;
+    const { birdData, trueAnswerTrue, getGameStatus, getGameFinal, totalScore, numberAnswerTrue, itemAnswer }=this.state;
     const labelButton=getGameStatus?'Completion':'Next level';
     let classNameButtons='btn btn-primary btn-lg btn-block disabled';
+    let birdDataQuestion={
+      name:'*****',
+      image:'https://via.placeholder.com/150x100?text=Image+Bird',
+      species:'Latin name',
+      description:'прослушайте аудио запись и выберите ответ',
+    }
     if(trueAnswerTrue){
-      classNameButtons='btn btn-primary btn-lg btn-block'
+      classNameButtons='btn btn-primary btn-lg btn-block';
+      birdDataQuestion=this.getQuestion(numberAnswerTrue)
     }
     return (      
       <div className="App">
@@ -141,11 +171,11 @@ createBirdItem(name,id){
           navActive={this.state.navActive} 
           totalScore={this.state.totalScore} 
           levelScore={this.state.levelScore}/>
-        <Question/>
+        <Question birdData={birdDataQuestion}/>
         <section className='container section'>
           <div className='row'>
             <Answer birdData={birdData} onToggleAnswer={this.onToggleAnswer} trueAnswer={trueAnswerTrue}/>
-            <Description/>
+            <Description birdData={birdData} item={itemAnswer}/>
           </div>         
         </section>      
         <section className='section container'>          

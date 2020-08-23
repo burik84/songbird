@@ -3,12 +3,18 @@ import './header.css'
 
 export default class Header extends Component {
   navItems=[
+    // {name:'Warm up', id:0},
+    // {name:'Passerines', id:1},
+    // {name:'Forest birds', id:2},
+    // {name:'Song birds', id:3},
+    // {name:'Predator birds', id:4},
+    // {name:'Sea birds', id:5},
     {name:'Warm up', id:0},
-    {name:'Passerines', id:1},
-    {name:'Forest birds', id:2},
-    {name:'Song birds', id:3},
-    {name:'Predator birds', id:4},
-    {name:'Sea birds', id:5},
+    {name:'Birds group 1', id:1},
+    {name:'Birds group 2', id:2},
+    {name:'Birds group 3', id:3},
+    {name:'Birds group 4', id:4},
+    {name:'Birds group 5', id:5},
   ]
 
   render(){
@@ -30,7 +36,7 @@ export default class Header extends Component {
                 Song<span className='header-title--color'>bird</span>
             </h1>
             <div className='game-score'>
-                <span className='game-score_assign'>+ {levelScore}</span>
+                <span className='game-score_assign'>For answer: + {levelScore}</span>
                 <span className='game-score_item'>Score: {totalScore}</span>
             </div>
           </div>
