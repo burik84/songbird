@@ -17,14 +17,15 @@ import Description from './components/description/description';
 import Modal  from './components/modal/modal';
 
 import birdsData from './services/birdsData';
+import getNumber from './services/random';
 
 export default class App extends Component{
 
   state={
     navActive:0,
     totalScore:0,
-    levelScore:6,
-    numberAnswerTrue:5,
+    levelScore:6,   
+    numberAnswerTrue:getNumber(),
     trueAnswerTrue:false,
     birdData:[
       ...birdsData[0].map(({name,id, species, description, image, audio })=>{
@@ -53,7 +54,9 @@ createBirdItem(name, id, species, description, image, audio){
     const{ navActive, totalScore, levelScore, getGameStatus, getGameFinal }=this.state;
     let getStatus=getGameStatus;
     let getFinal=getGameFinal;
-    let newBirdData=[];
+    let newBirdData=[...birdsData[navActive].map(({name, id, species, description, image, audio })=>{
+      return this.createBirdItem(name, id, species, description, image, audio)
+    })];
     if(navActive===4){
       getStatus=true;
     }
@@ -77,13 +80,13 @@ createBirdItem(name, id, species, description, image, audio){
         getGameStatus:getStatus,
         getGameFinal:getFinal,
         itemAnswer:null,
+        numberAnswerTrue:getNumber(),
       }
     })
   }
 
   // Получение номера ответа от компонента Answer -  answer item
    onToggleAnswer=(id)=>{
-    //  console.log('Item click', id);
     let trueAnswer=false;
     if(id===this.state.numberAnswerTrue){
       trueAnswer=true;
@@ -131,10 +134,11 @@ createBirdItem(name, id, species, description, image, audio){
         trueAnswerTrue:false,
         getGameStatus:false,
         getGameFinal:false,
-        itemAnswer:null,
+        itemAnswer:null,        
+        numberAnswerTrue:getNumber(),
         birdData:[
-          ...birdsData[0].map(({name,id })=>{
-            return this.createBirdItem(name,id)
+          ...birdsData[0].map(({name,id, species, description, image, audio })=>{
+            return this.createBirdItem(name,id, species, description, image, audio)
           })
         ],
       }
@@ -142,28 +146,30 @@ createBirdItem(name, id, species, description, image, audio){
   }
 
   getQuestion=(id)=>{
-    const {name, image, species, description}=this.state.birdData[id-1]
+    const {name, image, species, description, audio }=this.state.birdData[id-1]
     return {
       name,
       image,
       species,
       description,
+      audio,
     }
   }
 
   render(){ 
     const { birdData, trueAnswerTrue, getGameStatus, getGameFinal, totalScore, numberAnswerTrue, itemAnswer }=this.state;
+
     const labelButton=getGameStatus?'Completion':'Next level';
     let classNameButtons='btn btn-primary btn-lg btn-block disabled';
     let birdDataQuestion={
       name:'*****',
       image:'https://via.placeholder.com/150x100?text=Image+Bird',
-      species:'Latin name',
-      description:'прослушайте аудио запись и выберите ответ',
+      species:'~~~~~',
+      description:'Listen to the audio recording and select an answer',
     }
     if(trueAnswerTrue){
       classNameButtons='btn btn-primary btn-lg btn-block';
-      birdDataQuestion=this.getQuestion(numberAnswerTrue)
+      birdDataQuestion=this.getQuestion(numberAnswerTrue);
     }
     return (      
       <div className="App">
@@ -171,7 +177,7 @@ createBirdItem(name, id, species, description, image, audio){
           navActive={this.state.navActive} 
           totalScore={this.state.totalScore} 
           levelScore={this.state.levelScore}/>
-        <Question birdData={birdDataQuestion}/>
+        <Question birdDataQuestion={birdDataQuestion} birdData={birdData} number={numberAnswerTrue}/>
         <section className='container section'>
           <div className='row'>
             <Answer birdData={birdData} onToggleAnswer={this.onToggleAnswer} trueAnswer={trueAnswerTrue}/>
@@ -179,8 +185,8 @@ createBirdItem(name, id, species, description, image, audio){
           </div>         
         </section>      
         <section className='section container'>          
-    <button type="button" className={classNameButtons} onClick={this.onChangeLevel}>{labelButton}</button>
-          </section>                
+          <button type="button" className={classNameButtons} onClick={this.onChangeLevel}>{labelButton}</button>
+        </section>                
         <section className='section container'>          
             <Modal getGameFinal={getGameFinal} totalScore={totalScore} closeModal={this.closeModal} startAgain={this.startAgain} />       
           </section>       
