@@ -4,6 +4,309 @@ const birdsData = [
         id: 1,
         name: 'Raven',
         species: 'Corvus corax',
+        description: 'The raven is a large bird. The body length reaches 70 centimeters, the wingspan is up to one and a half meters. Ravens inhabit the vicinity of the Tower. In England, there is a belief that the day the black crows fly away from the Tower, the monarchy will collapse.',
+        image: 'https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3'
+      },
+      {
+        id: 2,
+        name: 'Common crane',
+        species: 'Grus grus',
+        description: 'The sounds emitted by the crane are similar to the voiced "kur-ly - kur-ly". Cranes most often sing in a duet - one bird begins the song with the syllable "chickens", and the second picks up the "ly". If a bird sings alone, then it emits only the sound of "kur".',
+        image: 'https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3'
+      },
+      {
+        id: 3,
+        name: 'Swallow',
+        species: 'Delichon urbicum',
+        description: 'A quiet chirping is characteristic of swallows. The songs of the swallows do not cease throughout the summer. Researchers distinguish up to 6 chirping sounds in bird\'s: "vit", "vi-vit", "chivit", "chirivit", etc. Swallows love to sing a duet.',
+        image: 'https://live.staticflickr.com//65535//48539007512_5029d2a9a0.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_100%2Bex_fouragerend_gezien_%20%282%29.mp3'
+      },
+      {
+        id: 4,
+        name: 'Nightjar',
+        species: 'Caprimulgus europaeus',
+        description: 'Nightjar is an inconspicuous bird known for its voice. The nightjar song sounds like a monotonous trill similar to the rumble of a motorcycle. This rattling is heard from dusk to dawn, its tone, frequency and volume change.',
+        image: 'https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3'
+      },
+      {
+        id: 5,
+        name: 'Cuckoo',
+        species: 'Cuculus canorus',
+        description: 'The cuckoo was named so because of the peculiarities of her songs. Voiced "ku-ku" cannot be confused with any other bird. Cuckoos do not build nests; their offspring are raised by other species of bird\'s, to which the cuckoos throw their eggs.',
+        image: 'https://live.staticflickr.com/65535/48377838151_e15f430ec1.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501461-190616_08.13h_koekoek_brabantse%20biesbosch%20jantjesplaat_roep_1%20ex_ad%20m_ter%20plaatse%20zingend_gezien_.mp3'
+      },
+      {
+        id: 6,
+        name: 'Great tit',
+        species: 'Parus major',
+        description: 'More than 40 different sound combinations are distinguished in the chirping of tits. They sing almost all year round, calming down a little only in winter. Tits are real orderlies of the forest. One pair of tits during the nesting period protects dozens of trees from pests.',
+        image: 'https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3'
+      }
+    ],
+    [
+      {
+        id: 1,
+        name: 'Sind sparrow',
+        species: 'Passer domesticus',
+        description: 'Sparrows are the most famous and recognizable bird\'s. They are easy to recognize by their colorful plumage and perky chirping. Sparrows belong to the synatropic species - they settle close to human dwellings.',
+        image: 'https://live.staticflickr.com//65535//49366595303_06cf65b07e.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/CXFHOPIVAS/XC503224-191020_0134.mp3'
+      },
+      {
+        id: 2,
+        name: 'Rook',
+        species: 'Corvus frugilegus',
+        description: 'Rooks are very smart and quick-witted bird\'s. With the help of a beak, they create and use the simplest tools. Rooks have developed a reflex to the sounds of a tractor. Hearing "rattling", they fly towards the sound - the tractor is plowing the ground, which means there is a lot of feed in this place.',
+        image: 'https://live.staticflickr.com//65535//49347123322_291c86b016.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/RLRHCUIPIY/XC512540-gawron%20Suble%2019.12.19%20%2012.35.mp3'
+      },
+      {
+        id: 3,
+        name: 'Western jackdaw',
+        species: 'Coloeus monedula',
+        description: 'The word "jackdaw" comes from the Old Church Slavonic language and is translated as "black". This word is often called ravens or other black bird\'s. The Latin name for the jackdaw "monedula" is associated with the words coin for the bird\'s love for shiny and bright things.',
+        image: 'https://live.staticflickr.com//65535//49237149586_993cf685c5.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC510498-Coloeus%20monedula_2019.11.13_11.55_01.mp3'
+      },
+      {
+        id: 4,
+        name: 'Song thrush',
+        species: 'Turdus philomelos',
+        description: 'Thrush is the best singer from the passerine squad. The song consists only of beautiful sonorous whistles and short trills. Most often it can be heard in the morning and evening. Thrushes sing during the entire nesting period.',
+        image: 'https://live.staticflickr.com/65535/48979125763_e2534f54bd.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513326-190704_1146_TF-Glogow.mp3'
+      },
+      {
+        id: 5,
+        name: 'Common magpie',
+        species: 'Pica pica',
+        description: 'The magpie is a very hardworking bird. She builds up to eight nests, and then chooses the best of them. The entrance to the nest of forty is always facing south, so that the dwelling is warmer. Magpies are the only bird\'s that recognize themselves in the mirror.',
+        image: 'https://live.staticflickr.com//65535//49360363066_ff02bb6a73.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC500868-Pica%20pica2019.08.23_09.18_02.mp3'
+      },
+      {
+        id: 6,
+        name: 'Eurasian jay',
+        species: 'Garrulus glandarius',
+        description: 'When a jay is worried, the tuft on her head ruffles. The bird is trying to create a frightening sight. Jays are able to imitate the voices of other bird\'s, animals and the sounds that humans create. They make large supplies of acorns and nuts for the winter.',
+        image: 'https://live.staticflickr.com//65535//49369678956_9a7465c7f4.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/TFOGOENSTQ/XC501517-191008_1590%201300.%20Eichelh%C3%A4her%20D%2C%20NW%2C%20LEV.%20Stephan%20Risch.mp3'
+      }
+    ],
+    [
+      {
+        id: 1,
+        name: 'Common chaffinch',
+        species: 'Fringilla coelebs',
+        description: 'There are 450 species of finches in the wild. In winter, finches lead a gregarious lifestyle. Sometimes sparrows can be seen in their families. Finches sing in the spring, with the onset of the mating season. Their singing is flooded, multi-minute roulades.',
+        image: 'https://live.staticflickr.com/65535/49143150817_2d3a2f6c1e.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC512407-150622_03%20zi%C4%99ba%20%282%29.mp3'
+      },
+      {
+        id: 2,
+        name: 'Red crossbill',
+        species: 'Loxia curvirostra',
+        description: 'Crossbills are called "Christmas" bird\'s. Under natural conditions, they give birth to offspring in winter - in January. These bird\'s insulate their nests with moss and animal hair, so the chicks are not cold. In search of cones, crossbills can fly away 3500 km from the nest.',
+        image: 'https://live.staticflickr.com//65535//49365470123_f2de66bb35.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/OTVUCEGYZN/XC495381-Kruisbek%20roep%20NHD%20290619.mp3'
+      },
+      {
+        id: 3,
+        name: 'European turtle dove',
+        species: 'Streptopelia turtur',
+        description: 'Turtle Dove lives in mixed and deciduous forests, as well as in city parks and villages. bird\'s often choose places to live near humans and easily get used to people. Due to the melodic pleasant singing, turtle doves are often bred at home.',
+        image: 'https://live.staticflickr.com/65535/48063004977_84252f9ceb.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC324106-Turkawka_Streptopelia_turtur_Poland_Jarek_Matusiak_2011625_07.mp3'
+      },
+      {
+        id: 4,
+        name: 'Great spotted woodpecker',
+        species: 'Dendrocopos major',
+        description: 'The woodpecker is a noticeable and noisy bird, often living next to a person. From mid-January to the end of June, one can hear the "drum roll" of woodpeckers - a trill from the vibration of branches under the rapid blows of the bird\'s beak. In good weather, the roll is heard within a radius of 1.5 km.',
+        image: 'https://live.staticflickr.com/65535/49339376578_e933426455.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC518928-AB-017%20dzi%C4%99cio%C5%82%20du%C5%BCy%20agresja%20%282%29.mp3'
+      },
+      {
+        id: 5,
+        name: 'Eurasian hoopoe',
+        species: 'Upupa epops',
+        description: 'Hoopoes prefer to live in open landscapes with individual trees or groves. The most convenient for bird\'s are forest-steppe and savannah. The hoopoe can choose places of residence next to a person: pastures, vineyards, orchards.',
+        image: 'https://live.staticflickr.com//65535//49226383598_6f8be86a06.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC477326-dudek%20%282%29.mp3'
+      },
+      {
+        id: 6,
+        name: 'Common swift',
+        species: 'Apus apus',
+        description: 'Swift can be seen in almost every corner of the planet. They live both in forest areas and in open areas. Swifts live in large flocks. Large colonies of these bird\'s can be seen in cities or on coastal cliffs.',
+        image: 'https://live.staticflickr.com//65535//48386150031_7b749df74b.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/TMUAWSDHDJ/XC511871-G.mp3'
+      }
+    ],
+    [
+      {
+        id: 1,
+        name: 'Eurasian skylark',
+        species: 'Alauda arvensis',
+        description: 'Larks are migratory bird\'s. From the beginning of September, they fly south. They return in early March, regardless of whether the snow has melted or not. Upon arrival of the larks, they determined the onset of spring and the time when it was time to plow the land.',
+        image: 'https://live.staticflickr.com/65535/47105096764_f751fba568.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC462158-Skowronek_Alauda_arvensis_Poland_Jarek_Matusiak_%20-006%20skowronek%20%282%29.mp3'
+      },
+      {
+        id: 2,
+        name: 'Thrush nightingale',
+        species: 'Luscinia luscinia',
+        description: 'Nightingales sing from early May to late summer. Each song of the nightingale consists of 12 repeating elements, which are also called knees. In addition to their own trills, nightingales easily and well adopt the song of other bird\'s.',
+        image: 'https://live.staticflickr.com/7605/27669397735_f3c21758f2.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/HILVWSADVL/XC513809-R07_0052%20Thrush%20Nightingale%20Snipe.mp3'
+      },
+      {
+        id: 3,
+        name: 'Common starling',
+        species: 'Sturnus vulgaris',
+        description: 'Starlings are migratory bird\'s. The synchronized flight of large flocks of starlings is called murmuring. This is a beautiful and mesmerizing phenomenon - many bird\'s seem to dance in the air, forming intricate shapes that shrink and increase in the sky.',
+        image: 'https://live.staticflickr.com/65535/49357593971_9509fe1d7c.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC515519-2020.01.01_17.24_01.MP3'
+      },
+      {
+        id: 4,
+        name: 'Eurasian golden oriole',
+        species: 'Oriolus oriolus',
+        description: 'The melodiousness of the oriole\'s voice has been compared to the sound of a flute. It is difficult for humans to see the Oriole, as it lives high in the trees. The Oriole is not only very beautiful, but also a useful bird. It destroys poisonous caterpillars that other bird\'s do not eat.',
+        image: 'https://live.staticflickr.com/65535/47102184004_58a93380b9.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC491801-2019.07.07_06.28_01.mp3'
+      },
+      {
+        id: 5,
+        name: 'Bohemian waxwing',
+        species: 'Bombycilla garrulus',
+        description: 'The waxwing has very tenacious claws, which helps the bird to stay on the branches and peck at the berries that are most difficult to get. During courtship, the male offers the female a berry or other treat. If the female accepts it, then the birds create a pair.',
+        image: 'https://live.staticflickr.com//65535//49367433842_1b06da0e6b.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC517421-AB-004%20%282%29%20jemio%C5%82uszka.mp3'
+      },
+      {
+        id: 6,
+        name: 'European goldfinch',
+        species: 'Carduelis carduelis',
+        description: 'Goldfinches sing beautifully and melodiously. Both in nature and in captivity, they chirp almost all year round. More than 20 iridescent trills are distinguished in the singing of the goldfinch. Goldfinches get used to people, and may even return to the owner after they are released.',
+        image: 'https://live.staticflickr.com//65535//49366257253_db3ce48b9a.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489265-190724_07.58h_putter_biesbosch_%20boompjes%20langs%20open%20water_zang_1ex_ad_niet%20gezien_.mp3'
+      }
+    ],
+    [
+      {
+        id: 1,
+        name: 'Steppe eagle',
+        species: 'Aquila nipalensis',
+        description: 'In ancient times, the eagle was a symbol of the sun. Eagles often hover above the ground, and their speed can reach 240 km / h. The illusion of slow motion occurs due to the flight altitude - over 700 meters',
+        image: 'https://live.staticflickr.com//4835//43867392960_7105d71e19.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/KTBTZAHSXF/10_Aquila_nipalensis_al02D85.mp3'
+      },
+      {
+        id: 2,
+        name: 'Black kite',
+        species: 'Milvus migrans',
+        description: 'Kites are large predators, they reach a height of about half a meter, and the weight of adults reaches 1 kg. The wings are narrow and long, their span is 1.5 m. Kites often nest in large flocks and even form large colonies.',
+        image: 'https://live.staticflickr.com//65535//48701190276_ee2a9ed594.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC485740-2019-06-22%20Selenga%20Milan%20brun%20cris%20de%20quemandage%203.mp3'
+      },
+      {
+        id: 3,
+        name: 'Hen harrier',
+        species: 'Circus cyaneus',
+        description: 'The harrier is a small falcon. It feeds mainly on mouse-like rodents, the basis of its diet is voles, hamsters, mice. The plumage of the harrier can be ash gray. Such a bird is associated with the comparison "gray-haired as a harrier."',
+        image: 'https://live.staticflickr.com/4480/37240531151_b74619c99d.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513498-190709_1175_Cir.cyan-f.mp3'
+      },
+      {
+        id: 4,
+        name: 'Peregrine falcon',
+        species: 'Falco peregrinus',
+        description: 'The Latin name Falco comes from the word "sickle" because of the sickle-shaped wings. Long and wide wings allow the falcon to rise high into the sky and soar freely. The flight speed of the falcon reaches 280-320 kilometers per hour.',
+        image: 'https://live.staticflickr.com//65535//49310710607_92a3a145a9.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC496049-Pilgrimsfalk_06.mp3'
+      },
+      {
+        id: 5,
+        name: 'Northern goshawk',
+        species: 'Accipiter gentilis',
+        description: 'All hawks have broad and short wings. Another distinguishing feature is the white "eyebrows" above the eyes. Slavic warriors placed the image of a hawk on their banners, as a symbol of courage, power and ruthlessness towards enemies.',
+        image: 'https://live.staticflickr.com//65535//49024617331_b9d0d2c9b3.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC512740-Duvh%C3%B6k_09.mp3'
+      },
+      {
+        id: 6,
+        name: 'Eurasian eagle-owl',
+        species: 'Bubo bubo',
+        description: 'The owl\'s flight is noiseless, the eyesight is very sharp. These features make the bird an unrivaled night hunter. The owl has no natural enemies, not a single animal hunts adult birds. But foxes and wolves attack the chicks.',
+        image: 'https://live.staticflickr.com/65535/48137123012_393653c2e4.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/WNLIDKJKXT/XC518386-sense%20t%C3%ADtol.mp3'
+      }
+    ],
+    [
+      {
+        id: 1,
+        name: 'Wandering albatross',
+        species: 'Diomedea exulans',
+        description: 'The albatross is the largest flying bird in the world. The wingspan reaches three and a half, the weight is ten kilograms. Albatrosses spend most of their lives in the air, covering vast distances over the ocean.',
+        image: 'https://live.staticflickr.com/7557/16260253965_8e9430cb66.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/WOEAFQRMUD/XC293087-Diomedea%20exulans151120_T254.mp3'
+      },
+      {
+        id: 2,
+        name: 'Blue-footed booby',
+        species: 'Sula nebouxii',
+        description: 'The peculiarity of the blue-footed boobies is not only the rich, bright blue color of the legs, but also the fact that they are very warm. While other species of birds warm their clutches with their bodies, the blue-footed boobies do it with their paws.',
+        image: 'https://live.staticflickr.com/800/40645471394_4422e69ed8.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/YHKQPPJDVP/XC411507-171217_1491%20BF%20Booby%205ft%20IDLP%201230%20mp3%20amp.mp3'
+      },    
+      {
+        id: 3,
+        name: 'Sooty shearwater',
+        species: 'Puffinus griseus',
+        description: 'The sizes of shearwater are different. The smallest of them are up to 25 cm in length, the largest - up to 1 m, with a wingspan of about 2 m.There is a belief that the appearance of a shearwater in the air foreshadows a storm, as evidenced by the very name of the bird.',
+        image: 'https://live.staticflickr.com//607//22136056020_935cb113f9.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/XQEVNREHJY/SHEARWATER%20Christmas%20Island_04_Motu_Isla%20de%20Pascua-Easter%20Island_CH_4MAR03_Alvaro%20Jaramillo.mp3'
+      },
+      {
+        id: 4,
+        name: 'Pelican',
+        species: 'Pelecanus',
+        description: 'Pelicans are inhabitants of seas and rivers. They walk awkwardly, but fly and swim well. They feed mainly on fish, organize collective hunts - lining up in a semicircle, they flap their wings and beaks on the water and displace frightened fish in shallow water.',
+        image: 'https://live.staticflickr.com/65535/49159147156_dcbbb5c12a.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3'
+      },
+      {
+        id: 5,
+        name: 'Emperor penguin',
+        species: 'Aptenodytes forsteri',
+        description: 'The male emperor penguin reaches a height of 130 cm, its weight can be close to 50 kg. Of all modern penguins, this species is the largest. The penguin\'s diet consists of fish, squid and krill. Birds hunt in the ocean in large groups.',
+        image: 'https://live.staticflickr.com/5202/5252413926_8e013a3efd.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC449827-LS100829%20King%20Penguin%20call%20A.mp3'
+      },
+      {
+        id: 6,
+        name: 'European herring gull',
+        species: 'Larus argentatus',
+        description: 'Seagulls inhabit the shores of seas, lakes, rivers, reservoirs, swamps, and often nest on islands. Since the end of the last century, seagulls began to appear in large cities, where they nest on the roofs of buildings. All seagulls are colonial.',
+        image: 'https://live.staticflickr.com/65535/48577115317_7034201dde.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501190-190801_06.50h_zilvermeeuw_duinen%20van%20goeree_roep_2ex_overvliegend_gezien_.mp3'
+      }
+    ]
+  ];
+  
+  const birdsDataRus = [
+    [       
+      {
+        id: 1,
+        name: 'Raven',
+        species: 'Corvus corax',
         description: 'Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.',
         image: 'https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg',
         audio: 'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3'
@@ -300,5 +603,5 @@ const birdsData = [
       }
     ]
   ];
-  
+
   export default birdsData;
