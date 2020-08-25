@@ -12,7 +12,7 @@ export default class Description extends Component{
     let nameBird='******';
     let speciesBird='*******';
     let descriptionBird='Listen to the audio recording and select an answer';
-    let srcImageBird='https://via.placeholder.com/100x66?text=Image+Bird';
+    let srcImageBird='https://picsum.photos/id/38/150/100?grayscale';
     let srcAudioBird='';
 
     if (item!==null) {

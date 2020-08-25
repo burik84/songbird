@@ -17,7 +17,7 @@ export default class Header extends Component {
       const isActive=navActive===id;
       const classActiveNav=isActive?'activ':null;
       return(
-        <li className={`nav-item list-item col-md-2 col-sm-4 ${classActiveNav}`} key={id}>
+        <li className={`nav-item list-item col-md-2 col-sm-4 col-6 ${classActiveNav}`} key={id}>
           {name}
         </li>
       )
@@ -30,7 +30,6 @@ export default class Header extends Component {
                 Song<span className='header-title--color'>bird</span>
             </h1>
             <div className='game-score'>
-                <span className='game-score_assign'>For answer: + {levelScore}</span>
                 <span className='game-score_item'>Score: {totalScore}</span>
             </div>
           </div>

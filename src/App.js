@@ -162,7 +162,7 @@ createBirdItem(name, id, species, description, image, audio){
     let classNameButtons='btn btn-primary btn-lg btn-block disabled';
     let birdDataQuestion={
       name:'*****',
-      image:'https://via.placeholder.com/150x100?text=Image+Bird',
+      image:'https://picsum.photos/id/38/150/100?grayscale',
       species:'~~~~~',
       description:'Listen to the audio recording and select an answer',
     }
