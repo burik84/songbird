@@ -1,7 +1,7 @@
 // navActive текущий индекс вопроса
 // totalScore общее количество баллов
 // levelScore количество балла за вопрос измениющееся в процесса ответов
-// numberAnswerTrue - номер правильного ответа временно заглушка
+// numberAnswerTrue - номер правильного ответа
 // trueAnswerTrue есть ли правильный ответ, при инициализации в состояние false
 // getGameStatus - выбран последний вопрос
 // getGameFinal - получен последний ответ
@@ -24,7 +24,7 @@ export default class App extends Component{
   state={
     navActive:0,
     totalScore:0,
-    levelScore:6,   
+    levelScore:5,   
     numberAnswerTrue:getNumber(),
     trueAnswerTrue:false,
     birdData:[
@@ -74,7 +74,7 @@ createBirdItem(name, id, species, description, image, audio){
      return  {
         navActive:navActive+1,
         totalScore:totalScore+levelScore+1,
-        levelScore:6,
+        levelScore:5,
         trueAnswerTrue:false,
         birdData:newBirdData,
         getGameStatus:getStatus,
@@ -130,7 +130,7 @@ createBirdItem(name, id, species, description, image, audio){
       return{
         navActive:0,
         totalScore:0,
-        levelScore:6,
+        levelScore:5,
         trueAnswerTrue:false,
         getGameStatus:false,
         getGameFinal:false,
@@ -158,7 +158,6 @@ createBirdItem(name, id, species, description, image, audio){
 
   render(){ 
     const { birdData, trueAnswerTrue, getGameStatus, getGameFinal, totalScore, numberAnswerTrue, itemAnswer }=this.state;
-
     const labelButton=getGameStatus?'Completion':'Next level';
     let classNameButtons='btn btn-primary btn-lg btn-block disabled';
     let birdDataQuestion={
