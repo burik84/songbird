@@ -11,7 +11,7 @@ export default class Description extends Component{
 
     let nameBird='******';
     let speciesBird='*******';
-    let descriptionBird='Listen to the audio recording and select an answer';
+    let descriptionBird='Прослушайте аудио запись и выберите ответ из списка';
     let srcImageBird='https://picsum.photos/id/38/150/100?grayscale';
     let srcAudioBird='';
 

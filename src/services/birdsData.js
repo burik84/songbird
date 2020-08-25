@@ -1,4 +1,4 @@
-const birdsData = [
+const birdsDataEng = [
     [       
       {
         id: 1,
@@ -305,7 +305,7 @@ const birdsData = [
     [       
       {
         id: 1,
-        name: 'Raven',
+        name: 'Ворон',
         species: 'Corvus corax',
         description: 'Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.',
         image: 'https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg',
@@ -604,4 +604,4 @@ const birdsData = [
     ]
   ];
 
-  export default birdsData;
+  export default birdsDataRus;

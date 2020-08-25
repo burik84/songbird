@@ -11,11 +11,11 @@ export default class Modal extends Component{
         if(getGameFinal){
             classNames+=' modal--active'
         }
-        let title='Congrats!';
+        let title='Поздравляю!';
         let textWinner=null;
         if(totalScore===30){
-            title=title+' Winner!!!';
-            textWinner='You score the maximum points';
+            title=title+' Победа!!!';
+            textWinner='Вы набрали максимальное количество очков';
         }
         return(
             <>
@@ -30,12 +30,12 @@ export default class Modal extends Component{
                                 </button>
                             </div>
                             <div className="modal-body">
-                                <p>You scored {totalScore} of 30 score</p>
+                                <p>Вы набрали {totalScore} из 30</p>
                                 <p>{textWinner}</p> 
                             </div>
                             <div className="modal-footer">
-                            <button type="button" className="btn btn-primary" onClick={()=>startAgain()}>Start again</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={()=>closeModal()}>Close</button>
+                            <button type="button" className="btn btn-primary" onClick={()=>startAgain()}>Начать заново</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={()=>closeModal()}>Закрыть</button>
                         </div>
                         </div>
                     </div>

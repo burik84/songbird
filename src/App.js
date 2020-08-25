@@ -147,25 +147,21 @@ createBirdItem(name, id, species, description, image, audio){
   }
 
   getQuestion=(id)=>{
-    const {name, image, species, description, audio }=this.state.birdData[id-1]
+    const {name, image, audio }=this.state.birdData[id-1]
     return {
       name,
       image,
-      species,
-      description,
       audio,
     }
   }
 
   render(){ 
     const { birdData, trueAnswerTrue, getGameStatus, getGameFinal, totalScore, numberAnswerTrue, itemAnswer }=this.state;
-    const labelButton=getGameStatus?'Completion':'Next level';
+    const labelButton=getGameStatus?'Завершить':'Следующий уровень';
     let classNameButtons='btn btn-primary btn-lg btn-block disabled';
     let birdDataQuestion={
       name:'*****',
       image:'https://picsum.photos/id/38/150/100?grayscale',
-      species:'~~~~~',
-      description:'Listen to the audio recording and select an answer',
     }
     if(trueAnswerTrue){
       classNameButtons='btn btn-primary btn-lg btn-block';
