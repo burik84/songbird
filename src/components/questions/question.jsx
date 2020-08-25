@@ -11,8 +11,10 @@ export default class Question extends Component {
     return(
       <section className='section container'>
         <div className="question row">
-          <img className='image--question image' src={image} alt={`Bird ${name}`}></img>
-          <div className='question-block'>
+          <div className='question__image col-sm-3 col-12'>
+            <img className='image image--question' src={image} alt={`Bird ${name}`}></img>
+          </div>          
+          <div className='question-block col-sm-8 col-12'>
             <h3 className='bird-name question-block__name'>{name}</h3>
             <AudioBlock srcAudio={audio} classNames='audio' />
           </div>
