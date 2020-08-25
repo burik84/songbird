@@ -10,8 +10,8 @@ export default class Question extends Component {
     const { audio }=birdData[number-1];
     return(
       <section className='section container'>
-        <div className="question">
-          <img className='question--image image' src={image} alt={`Bird ${name}`}></img>
+        <div className="question row">
+          <img className='image--question image' src={image} alt={`Bird ${name}`}></img>
           <div className='question-block'>
             <h3 className='bird-name question-block__name'>{name}</h3>
             <AudioBlock srcAudio={audio} classNames='audio' />

@@ -1,3 +1,7 @@
+.answer{
+    padding-left:0;
+}
+
 .answer-item{
     cursor: pointer;
 }
@@ -23,8 +27,13 @@
     background-color:var(--secondary);  
 }
 
-@media (max-width: 572px) { 
+@media (max-width: 576px) { 
     .answer{
         margin-bottom: 10px;
+        padding-right:0;
+    }
+    .answer-item{
+        font-size:14px;
+        padding:8px 12px;
     }
  }

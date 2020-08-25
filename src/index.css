@@ -19,17 +19,14 @@ body {
   display: inline-block;
   border-radius: 5px; 
 }
-
-.bird-name{
-  padding: 5px 5px 10px;
-  border-bottom: 1px solid var(--gray);
+.image--question{
+  width: 150px;
 }
+
+.image--description{ 
+    width: 100px;
+  }
 .btn.disabled{
   cursor: auto;
   pointer-events: none;
-}
-.app{
-  display: flex;
-  flex-direction: column;
-  position: relative;
 }

@@ -24,7 +24,7 @@ export default class Header extends Component {
     })
     return (
       <section className="container section">
-        <div className="header d-flex">
+        <div className="header row">
           <div className='header-content d-flex'>
             <h1 className='header-title display-5'>
                 Song<span className='header-title--color'>bird</span>

@@ -9,7 +9,6 @@
 // birdData - массив данных для игры
 
 import React, {Component } from 'react';
-import './App.css';
 import Header from './components/header/header.jsx';
 import Question from './components/questions/question';
 import Answer from './components/answer/answer';
@@ -18,6 +17,8 @@ import Modal  from './components/modal/modal';
 
 import birdsData from './services/birdsData';
 import getNumber from './services/random';
+
+import './App.css';
 
 export default class App extends Component{
 
@@ -177,14 +178,16 @@ createBirdItem(name, id, species, description, image, audio){
           totalScore={this.state.totalScore} 
           levelScore={this.state.levelScore}/>
         <Question birdDataQuestion={birdDataQuestion} birdData={birdData} number={numberAnswerTrue}/>
-        <section className='container section'>
+        <section className='section container'>
           <div className='row'>
             <Answer birdData={birdData} onToggleAnswer={this.onToggleAnswer} trueAnswer={trueAnswerTrue}/>
             <Description birdData={birdData} item={itemAnswer}/>
           </div>         
         </section>      
-        <section className='section container'>          
-          <button type="button" className={classNameButtons} onClick={this.onChangeLevel}>{labelButton}</button>
+        <section className='section container'> 
+          <div className='row'>
+            <button type="button" className={classNameButtons} onClick={this.onChangeLevel}>{labelButton}</button>
+          </div>    
         </section>                
         <section className='section container'>          
             <Modal getGameFinal={getGameFinal} totalScore={totalScore} closeModal={this.closeModal} startAgain={this.startAgain} />       
