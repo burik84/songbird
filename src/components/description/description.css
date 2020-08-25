@@ -4,9 +4,14 @@
 .description{
     display: flex;
     flex-wrap: wrap;
+    position: relative;    
+    transition: ease 1s;
+    border: 1px solid rgba(0, 0, 0, 0.125);;
+    border-radius: 0.4rem;
 }
 
 .description__bird{
+    margin-top: 10px;
     height: calc( 24px * 3 );
     overflow: hidden;
 }
@@ -17,10 +22,15 @@
 }
 
 .description--image{ 
+    margin-top: 20px;
     width: 100px;
+    transform: translateY(0);
   }
-@media (max-width: 572px) { 
-    .description{
 
-    }
- }
+  .description-title{
+      padding-top: 10px;
+  }
+  .description--disabled{
+      position: absolute;
+      transform: translateY(-1000px);
+  }
