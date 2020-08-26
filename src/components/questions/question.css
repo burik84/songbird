@@ -1,0 +1,19 @@
+.question{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.question-block{
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.question__image{ 
+    /* display:block; */
+    text-align:center;
+  }
+
+@media (max-width: 576px) { 
+    .question-block{
+        margin: 20px auto 0;
+    }
+ }

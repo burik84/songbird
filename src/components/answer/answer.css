@@ -1,0 +1,39 @@
+.answer{
+    padding-left:0;
+}
+
+.answer-item{
+    cursor: pointer;
+}
+.answer-item:hover,
+.answer-item:focus{
+    color:#fff;
+    background-color:var(--primary);
+    border-color:var(--primary);
+    box-shadow:0 0 0 0.2rem rgba(140,203,185,0.5);
+    z-index: 1;
+}
+
+.answer-item--true,
+.answer-item--true.disabled
+{
+    color:#fff;
+    background-color:var(--success);   
+}
+.answer-item--false,
+.answer-item--false.disabled
+{    
+    color:#fff;
+    background-color:var(--secondary);  
+}
+
+@media (max-width: 576px) { 
+    .answer{
+        margin-bottom: 10px;
+        padding-right:0;
+    }
+    .answer-item{
+        font-size:14px;
+        padding:8px 12px;
+    }
+ }

@@ -1,0 +1,108 @@
+.header{
+    display:flex;
+    flex-direction: column;
+}
+.header-title{
+    color: var(--primary);
+}
+.header-title--color{
+    color:var(--success);
+}
+.header-content{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto 0;
+    position: relative;
+    width: 100%;
+}
+.game-score{
+    position: absolute;
+    right: 0;
+    padding: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.game-score_item{
+    margin-left: 10px;
+}
+
+
+.list-items{
+    display: flex;
+    text-align: center;
+}
+.list-item{
+    padding: 10px 40px;
+    flex-grow: 1;
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.list-item.activ{
+    background-color: var(--success);
+    border-color: var(--success);
+}
+
+.list-item:nth-of-type(1){
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.list-item:nth-last-of-type(1){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+@media (max-width: 1024px) {
+    .list-item{
+        padding: 5px 20px;
+        margin-top: 1px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 766px) {    
+    .list-item{
+        padding: 3px 10px;
+        margin-top: 1px;
+    }
+    .list-item:nth-of-type(4n){
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .list-item:nth-last-of-type(4n){
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+ }
+
+@media (max-width: 576px) { 
+    .header-title{
+        flex-grow: 1;
+        text-align: center;
+    }
+    .game-score{
+        position: relative;
+        transform: none;
+    }
+    .list-item{
+        padding: 3px 10px;
+        font-size: 12px;
+    }
+    .list-item:nth-of-type(4n){
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .list-item:nth-last-of-type(4n){
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .list-item:nth-of-type(2n-1){
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .list-item:nth-last-of-type(2n-1){
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+ }

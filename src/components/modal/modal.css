@@ -1,0 +1,40 @@
+.overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+}
+
+.modal--active{
+    display: block;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+}
+.modal--active .modal-header{
+    /* position: relative; */
+    margin: 0 auto;
+}
+.modal--active .modal-body{
+    margin: 0 auto;
+    padding: 20px 50px;
+}
+
+.modal--active .modal-title{
+    margin: 0 auto;
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+@media (max-width: 576px) { 
+    .modal-dialog{
+        margin: 1rem;
+    }
+ }
